@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - My Django Project{% endblock %}
+
+{% block content %}
+    <h2>Bienvenido a la entrega coder!</h2>
+    <p>Puedes escribir el nombre y apellido del profesor u estudiante que estés buscando</p>
+    <p>(Simplemente quieres ver el listado completo de profesores y estudiantes? presiona buscar sin llenar ningún campo!)</p>
+
+    <form action="{% url 'search_results' %}" method="get" class="search-form">
+        <input type="text" name="name" placeholder="Ingresa el nombre">
+        <input type="text" name="surname" placeholder="Ingresa el apellido">
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <p><a href="{% url 'estudiantes:register_estudiante' %}">Registar un nuevo estudiante</a></p>
+    <p><a href="{% url 'profesores:register_profesor' %}">Registrar un nuevo profesor</a></p>
+{% endblock %}
+

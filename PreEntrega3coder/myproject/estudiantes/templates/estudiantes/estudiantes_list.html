@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Estudiantes - My Django Project{% endblock %}
+
+{% block content %}
+    <h2>Lista de estudiantes</h2>
+    <!-- Similarly, this will be replaced with data from the database -->
+    <ul>
+        {% for estudiante in estudiantes %}
+            <li>Nombre: {{ estudiante.name }} {{ estudiante.surname }} - Edad:{{ estudiante.age }} - Género {{ estudiante.gender}} </li>
+        {% empty %}
+            <li>No hay estudiantes disponibles.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

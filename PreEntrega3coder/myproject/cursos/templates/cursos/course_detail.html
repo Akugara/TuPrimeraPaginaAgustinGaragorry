@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="course-detail-container">
+    <h2>Detalles del curso: {{ curso.title }}</h2>
+    <p>Código del curso: {{ curso.code }}</p>
+    <p>Profesor a cargo del curso: {{ curso.profesor.name }}</p>
+
+    <h3>Estudiantes anotados:</h3>
+    {% if estudiantes %}
+    <ul>
+        {% for estudiante in estudiantes %}
+            <li>{{ estudiante.name }} {{ estudiante.surname }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay estudiantes anotados a este curso.</p>
+    {% endif %}
+</div>
+{% endblock %}

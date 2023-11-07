@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Django Project{% endblock %}</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}?v=16">
+
+</head>
+<body><div class="container">
+    <header>
+        <h1>Coderhouse / Django</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'profesores:profesor_list' %}">Profesores</a>                </li>
+                <li><a href="{% url 'estudiantes:estudiante_list' %}">Estudiantes</a></li>
+                <li><a href="{% url 'cursos:curso_list' %}">Cursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Content will go here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Django Project / CoderHouse / Agustín Garagorry</p>
+    </footer>
+
+</div></body>
+</html>

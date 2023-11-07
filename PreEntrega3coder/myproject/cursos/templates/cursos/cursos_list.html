@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Cursos - My Django Project{% endblock %}
+
+{% block content %}
+    <h2>Listado de cursos</h2>
+    <ul>
+        {% for curso in cursos %}
+            <li>
+                <a href="{% url 'cursos:course_detail' curso.id %}">{{ curso.title }}</a> - Code: {{ curso.code }}
+            </li>
+        {% empty %}
+            <li>No hay cursos disponibles.</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'cursos:create_curso' %}">Crear un nuevo curso</a></p>
+{% endblock %}

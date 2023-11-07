@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Profesores - My Django Project{% endblock %}
+
+{% block content %}
+    <h2>Lista de profesores</h2>
+    <!-- acá se van a mostrar los profesores que se vayan agregando a la base de datos -->
+    <ul>
+        {% for profesor in profesores %}
+            <li>Nombre: {{ profesor.name }} {{ profesor.surname }} - Años {{ profesor.age }} - Materia a cargo: {{ profesor.course }} - Género {{ profesor.gender }} </li>
+        {% empty %}
+            <li>No hay profesores disponibles.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
